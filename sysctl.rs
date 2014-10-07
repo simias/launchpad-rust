@@ -101,8 +101,6 @@ pub mod periph {
         ::io::write_bit(enable,
                         p & 0xff,
                         ::map::sysctl::RCGCBASE + ((p & 0xff00) >> 8));
-        /* Need to temporize here */
-        ::io::read32(0);
     }
 
     pub fn enable(p: u32) {

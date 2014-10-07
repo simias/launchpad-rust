@@ -17,7 +17,7 @@ pub static ISR_VECTOR: [Option<unsafe extern fn()>, .. 3] = [
   Some(_stack_top),
   Some(reset),            // Reset
   None,
-  /* Leave the other entries out as long as we don't implement then,
+  /* Leave the other entries out as long as we don't implement them,
    * the linker script will pad them with 0 */
 ];
 

@@ -12,19 +12,19 @@ fn set_config(port: u32, pins: u8) {
             let mut pc = ::io::read32(pc_addr);
             pc &= !(0x3 << (2 * bit));
             ::io::write32(pc, pc_addr);
-
-            let dr2r_addr = port + ::map::gpio::O_DR2R;
-
-            let mut dr2r = ::io::read32(dr2r_addr);
-            dr2r |= pins as u32;
-            ::io::write32(dr2r, dr2r_addr);
-
-            let den_addr = port + ::map::gpio::O_DEN;
-
-            let mut den = ::io::read32(den_addr);
-            den |= pins as u32;
-            ::io::write32(den, den_addr);
         }
+
+        let dr2r_addr = port + ::map::gpio::O_DR2R;
+
+        let mut dr2r = ::io::read32(dr2r_addr);
+        dr2r |= pins as u32;
+        ::io::write32(dr2r, dr2r_addr);
+
+        let den_addr = port + ::map::gpio::O_DEN;
+
+        let mut den = ::io::read32(den_addr);
+        den |= pins as u32;
+        ::io::write32(den, den_addr);
     }
 }
 
